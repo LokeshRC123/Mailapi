@@ -8,10 +8,7 @@ RUN dotnet restore "PortfolioContactApi.csproj"
 
 COPY . .
 
-RUN dotnet publish "PortfolioContactApi.csproj" \
-    -c Release \
-    -o /app/publish \
-    --no-restore
+RUN dotnet publish "PortfolioContactApi.csproj" -c Release -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 
